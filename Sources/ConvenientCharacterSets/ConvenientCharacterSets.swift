@@ -4,15 +4,15 @@ infix operator ?=: ComparisonPrecedence
 infix operator ?!=: ComparisonPrecedence
 
 public extension CharacterSet {
-    public static var hexaDecimal: CharacterSet {
+    static var hexaDecimal: CharacterSet {
         return CharacterSet(charactersIn: "0123456789abcdefABCDEF")
     }
     
-    public func contains(_ c: Character) -> Bool {
+    func contains(_ c: Character) -> Bool {
         return self.contains(c.unicodeScalars.first!)
     }
     
-    public func union(_ str: String) -> CharacterSet {
+    func union(_ str: String) -> CharacterSet {
         return self.union(CharacterSet(charactersIn: str))
     }
 }
